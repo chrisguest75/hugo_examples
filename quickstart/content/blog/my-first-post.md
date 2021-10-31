@@ -3,9 +3,9 @@ title: "My First Post - My Demos"
 date: 2021-10-31T13:24:31Z
 slug: ""
 description: "A first post test"
-keywords: []
+keywords: [info]
 draft: false
-tags: []
+tags: [first, blog, info]
 math: false
 toc: true
 ---

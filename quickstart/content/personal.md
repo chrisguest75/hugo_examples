@@ -1,7 +1,7 @@
 ---
 title: "Personal"
 date: 2021-10-31T15:34:51Z
-draft: true
+draft: false
 ---
 ![me](/me.png)
 

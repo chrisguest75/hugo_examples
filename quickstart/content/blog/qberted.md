@@ -1,5 +1,5 @@
 ---
-title: "Qberted"
+title: "Perpetual Qberted Grid"
 date: 2021-10-31T16:22:38Z
 slug: ""
 description: "Qberted perpetual grid"

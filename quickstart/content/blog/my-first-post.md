@@ -1,8 +1,8 @@
 ---
-title: "My First Post - My Demos"
+title: "First past the post"
 date: 2021-10-31T13:24:31Z
 slug: ""
-description: "A first post test"
+description: "A first post"
 keywords: [info]
 draft: false
 tags: [first, blog, info]

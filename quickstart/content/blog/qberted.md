@@ -10,7 +10,7 @@ math: false
 toc: true
 ---
 
-![qberted](/qberted.png)
+![qberted](/pages_example/qberted.png)
 
 Retro gamers must all know about Q\*Bert an early isometric grid game.  I started out trying to create the same grid effect as a background, but with a perpetual falling of the stacks. It turns out there were some little tricks I had to consider along the way. 
 

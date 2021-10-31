@@ -1,6 +1,6 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://chrisguest75.github.io/pages_example'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Blog'
 theme = 'hugo-theme-codex'
 
 enableEmoji = true

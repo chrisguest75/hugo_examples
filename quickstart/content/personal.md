@@ -3,7 +3,7 @@ title: "Personal"
 date: 2021-10-31T15:34:51Z
 draft: false
 ---
-![me](/me.png)
+![me](/pages_example/me.png)
 
 Currently working at [trint.com](https://trint.com) as a lead engineer.  
 

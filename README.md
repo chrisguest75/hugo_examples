@@ -29,7 +29,8 @@ hugo new site quickstart
 
 git submodule add https://github.com/jakewies/hugo-theme-codex.git themes/hugo-theme-codex
 
-hugo new posts/my-first-post.md         
+hugo new posts/my-first-post.md 
+hugo new blog/my-first-blog.md         
 hugo server -D
 
 ```
@@ -40,10 +41,23 @@ hugo server -D
 hugo -D
 ```
 
-## quickstart 
-https://themes.gohugo.io/themes/hugo-theme-codex/
 
+```sh
+# create ico file
+magick -density 128x128 -background none ./resources/me.png -resize 128x128 ./resources/favicon.ico
+```
+
+## quickstart 
+Using the [hugo-theme-codex](https://themes.gohugo.io/themes/hugo-theme-codex/) theme. 
+
+Demonstrates examples of using emojis and linking images into the posts.  
+```ini
+enableEmoji = true
+```
 
 ## loveit 
 https://themes.gohugo.io/themes/loveit/
 
+
+# Resources
+* A walkthrough from [freecodecamp](https://www.freecodecamp.org/news/your-first-hugo-blog-a-practical-guide/)

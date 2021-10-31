@@ -18,7 +18,7 @@ Although not always to a consistent standard I regularly go back to the demos an
 To enforce this approach I usually work on batteries and switch machines when the battery drains.  :computer:
 
 
-![my terminal](/pages_example/terminal.png)
+![my terminal](/terminal.png)
 
 
 

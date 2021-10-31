@@ -10,4 +10,4 @@ math: false
 toc: false
 ---
 
-![dancer](/pages_example/dancer.png)
+![dancer](/dancer.png)

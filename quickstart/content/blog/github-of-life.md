@@ -9,7 +9,7 @@ tags: [code]
 math: false
 toc: false
 ---
-![github of life](/pages_example/github-of-life-screen.png)
+![github of life](/github-of-life-screen.png)
 
 Yesterday I published the [repo](https://github.com/chrisguest75/github-of-life) for [github-of-life](http://github-of-life.herokuapp.com/). It consists of a simple Typescript application and pipeline to deploy it.  The code is a simple implementation of Conway's Game of Life [ref](https://en.m.wikipedia.org/wiki/Conway%27s_Game_of_Life).  Using simple rules to control a cellular grid to create patterns that either life forever or become extinct.  Sometimes you may be left with a set of still or osciallating life forms.   
 

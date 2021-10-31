@@ -1,4 +1,4 @@
-baseURL = 'https://chrisguest75.github.io/pages_example'
+baseURL = 'https://blog.chrisguest.dev/'
 languageCode = 'en-us'
 title = 'Blog'
 theme = 'hugo-theme-codex'

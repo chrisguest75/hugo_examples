@@ -27,6 +27,12 @@ enableEmoji = true
   url = "/personal"
 
 [[menu.main]]
+  identifier = "examples"
+  name = "examples"
+  title = "examples"
+  url = "/examples"
+
+[[menu.main]]
   identifier = "blog"
   name = "blog"
   title = "Blog"

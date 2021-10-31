@@ -10,6 +10,7 @@ This repository contains a playground where I'm playing with a few hugo themes.
 * submodules instructions 
 * TIL - learned
 * food blog
+* Can I embed a 3d spinning globe onto my hugo about page?  
 
 
 ## Installation
@@ -61,3 +62,5 @@ https://themes.gohugo.io/themes/loveit/
 
 # Resources
 * A walkthrough from [freecodecamp](https://www.freecodecamp.org/news/your-first-hugo-blog-a-practical-guide/)
+
+https://github.com/theNewDynamic/awesome-hugo

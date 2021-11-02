@@ -6,12 +6,10 @@ This repository contains a playground where I'm playing with a few hugo themes.
 ## TODO:
 * Instructions for linux.
 * Build public folder and commit into a pages repo
-* CNAME example.  
 * submodules instructions 
 * TIL - learned
 * food blog
 * Can I embed a 3d spinning globe onto my hugo about page?  
-
 
 ## Installation
 ```sh
@@ -21,7 +19,6 @@ brew install hugo
 # init the submodules
 
 ```
-
 ## Creating an example
 Following the [quickstart](https://gohugo.io/getting-started/quick-start/) using [themes](https://themes.gohugo.io/) from the list.   
 ```sh
@@ -33,15 +30,7 @@ git submodule add https://github.com/jakewies/hugo-theme-codex.git themes/hugo-t
 hugo new posts/my-first-post.md 
 hugo new blog/my-first-blog.md         
 hugo server -D
-
 ```
-
-
-```sh
-# build the final render in public directory 
-hugo -D
-```
-
 
 ```sh
 # create ico file
@@ -56,11 +45,17 @@ Demonstrates examples of using emojis and linking images into the posts.
 enableEmoji = true
 ```
 
+```sh
+# build the final render in public directory 
+cd quickstart
+hugo -D
+```
+
+
 ## loveit 
 https://themes.gohugo.io/themes/loveit/
 
 
 # Resources
 * A walkthrough from [freecodecamp](https://www.freecodecamp.org/news/your-first-hugo-blog-a-practical-guide/)
-
-https://github.com/theNewDynamic/awesome-hugo
+* awesome-hugo https://github.com/theNewDynamic/awesome-hugo

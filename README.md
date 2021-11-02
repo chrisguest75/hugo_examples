@@ -16,8 +16,11 @@ This repository contains a playground where I'm playing with a few hugo themes.
 # extended version is installed by default on mac.
 brew install hugo
 
-# init the submodules
+# clone using --recurse-submodules 
+git clone --recurse-submodules git@github.com:chrisguest75/hugo_examples.git
 
+# init the submodules
+git submodule update --init --recursive
 ```
 ## Creating an example
 Following the [quickstart](https://gohugo.io/getting-started/quick-start/) using [themes](https://themes.gohugo.io/) from the list.   

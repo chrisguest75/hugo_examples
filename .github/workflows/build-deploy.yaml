@@ -50,10 +50,11 @@ jobs:
         ls -la ../../
         echo "Copy files"
         cp -R ../../quickstart/public/* . 
+        ls -la
         git status
         echo "Restore files"
-        git checkout head -- README.md 
-        git checkout head -- CNAME
+        git checkout HEAD -- README.md 
+        git checkout HEAD -- CNAME
         git status
         echo "Add files"
         git add .

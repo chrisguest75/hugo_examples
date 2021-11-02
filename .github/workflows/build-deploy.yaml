@@ -46,7 +46,8 @@ jobs:
         git clone https://github.com/chrisguest75/pages_example.git
         cd pages_example
         rm -rf *   
-        cp -R ../quickstart/public/* . 
+        ls -l ../../
+        cp -R ../../quickstart/public/* . 
         git checkout head -- README.md 
         git checkout head -- CNAME
         git add .

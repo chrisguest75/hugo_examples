@@ -57,10 +57,12 @@ jobs:
         git checkout HEAD -- CNAME
         git status
         echo "Add files"
-        git add .
+        git add -A
         echo "Commit files"
+        git config user.name "GitHub Actions Bot"
+        git config user.email "<>"        
         git commit -m "From https://github.com/chrisguest75/hugo_examples ${{ github.sha }}"
-        git push 
+        git push origin master
 
     # - name: Create build.json
     #   run: | 

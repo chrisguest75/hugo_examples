@@ -38,19 +38,26 @@ jobs:
 
     - name: Publish 
       run: |
-        echo "Sync Repo"
-        ls -l 
         pwd
+        ls -la 
+        echo "Sync Repo"
         mkdir -p ./target
         cd ./target
         git clone https://github.com/chrisguest75/pages_example.git
         cd pages_example
+        echo "Remove files"
         rm -rf *   
-        ls -l ../../
+        ls -la ../../
+        echo "Copy files"
         cp -R ../../quickstart/public/* . 
+        git status
+        echo "Restore files"
         git checkout head -- README.md 
         git checkout head -- CNAME
+        git status
+        echo "Add files"
         git add .
+        echo "Commit files"
         git commit -m "From https://github.com/chrisguest75/hugo_examples ${{ github.sha }}"
         git push 
 

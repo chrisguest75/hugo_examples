@@ -1,0 +1,41 @@
+name: Build Blog
+
+on:
+  push:
+    branches: 
+      - '*'
+      - '!main'   # excludes main
+    paths:
+      - '**'
+      - '.github/workflows/build-deploy.yaml'
+
+  pull_request:
+    branches:  
+      - '*'
+      - '!main'   # excludes main
+    paths:
+      - '**'
+      - '.github/workflows/build-deploy.yaml'
+
+jobs:
+  build-test:
+    name: "Build Blog"  
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build with hugo
+      run: |
+        echo "Installing Hugo"
+        brew install hugo        
+        echo "Running Hugo"
+        cd quickstart
+        hugo -D
+        echo "COMPLETE exitcode:$?"
+
+    # - name: Create build.json
+    #   run: | 
+    #     export COMMITID="${{ github.sha }}"
+    #     cat ./src/build.template | envsubst > ./src/build.json          
+

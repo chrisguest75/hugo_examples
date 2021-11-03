@@ -36,36 +36,42 @@ jobs:
         hugo -D
         echo "COMPLETE exitcode:$?"
 
-    - name: Publish 
-      run: |
-        pwd
-        ls -la 
-        echo "Sync Repo"
-        mkdir -p ./target
-        cd ./target
-        git clone https://github.com/chrisguest75/pages_example.git
-        cd pages_example
-        echo "Remove files"
-        rm -rf ./*   
-        pwd
-        ls -la .
-        ls -la ../../
-        echo "Copy files"
-        cp -R ../../quickstart/public/* . 
-        ls -la ./
-        git status
-        echo "Restore files"
-        git checkout HEAD -- README.md 
-        git checkout HEAD -- CNAME
-        ls -la ./        
-        git status
-        echo "Add files"
-        git add -A
-        echo "Commit files"
-        git config user.name "GitHub Actions Bot"
-        git config user.email "<>"        
-        git commit -m "From https://github.com/chrisguest75/hugo_examples ${{ github.sha }}"
-        git push origin main
+    - name: Publish package 
+      uses: actions/upload-artifact@v2
+      with:
+        name: blog 
+        path: ./quickstart/public/*
+
+    # - name: Publish 
+    #   run: |
+    #     pwd
+    #     ls -la 
+    #     echo "Sync Repo"
+    #     mkdir -p ./target
+    #     cd ./target
+    #     git clone https://github.com/chrisguest75/pages_example.git
+    #     cd pages_example
+    #     echo "Remove files"
+    #     rm -rf ./*   
+    #     pwd
+    #     ls -la .
+    #     ls -la ../../
+    #     echo "Copy files"
+    #     cp -R ../../quickstart/public/* . 
+    #     ls -la ./
+    #     git status
+    #     echo "Restore files"
+    #     git checkout HEAD -- README.md 
+    #     git checkout HEAD -- CNAME
+    #     ls -la ./        
+    #     git status
+    #     echo "Add files"
+    #     git add -A
+    #     echo "Commit files"
+    #     git config user.name "GitHub Actions Bot"
+    #     git config user.email "<>"        
+    #     git commit -m "From https://github.com/chrisguest75/hugo_examples ${{ github.sha }}"
+    #     git push origin main
 
     # - name: Create build.json
     #   run: | 

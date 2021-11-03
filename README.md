@@ -71,3 +71,5 @@ https://lannonbr.com/blog/2019-12-09-git-commit-in-actions
 https://devconnected.com/how-to-git-add-all-files/#:~:text=git%20%2D%2Dversion-,Add%20All%20Files%20using%20Git%20Add,%E2%80%9D%20option%20for%20%E2%80%9Call%E2%80%9D.&text=In%20this%20case%2C%20the%20new,to%20your%20Git%20staging%20area.
 
 https://github.com/actions/upload-release-asset
+
+https://stackoverflow.com/questions/59810838/how-to-get-the-short-sha-for-the-github-workflow

@@ -35,7 +35,7 @@ jobs:
         cd quickstart
         hugo -D
         echo "COMPLETE exitcode:$?"
-        zip -r blog-package.zip ./quickstart/public
+        zip --junk-paths -r blog-package.zip ./public
         ls -la
 
     - name: Create Release

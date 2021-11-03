@@ -47,6 +47,8 @@ jobs:
         cd pages_example
         echo "Remove files"
         rm -rf ./*   
+        pwd
+        ls -la .
         ls -la ../../
         echo "Copy files"
         cp -R ../../quickstart/public/* . 

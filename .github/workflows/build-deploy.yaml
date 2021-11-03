@@ -1,0 +1,109 @@
+name: Build Blog
+
+on:
+  push:
+    branches: 
+      - '*'
+      - '!main'   # excludes main
+    paths:
+      - '**'
+      - '.github/workflows/build-deploy.yaml'
+
+  pull_request:
+    branches:  
+      - '*'
+      - '!main'   # excludes main
+    paths:
+      - '**'
+      - '.github/workflows/build-deploy.yaml'
+
+jobs:
+  build-test:
+    name: "Build Blog"  
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        submodules: 'true'      
+
+    - name: Build with hugo
+      run: |
+        echo "Installing Hugo"
+        brew install hugo        
+        echo "Running Hugo"
+        cd quickstart
+        hugo -D
+        echo "COMPLETE exitcode:$?"
+        cd ./public
+        zip -r ../blog-package.zip ./
+        ls -la ../
+
+    - name: Set outputs (shortsha)
+      id: vars
+      run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ steps.vars.outputs.sha_short }}
+        release_name: Release ${{ github.sha }}
+        draft: false
+        prerelease: false
+
+    - name: Upload Release Asset
+      id: upload-release-asset 
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+        asset_path: ./quickstart/blog-package.zip
+        asset_name: blog-package.zip
+        asset_content_type: application/zip
+
+    # - name: Publish package 
+    #   uses: actions/upload-artifact@v2
+    #   with:
+    #     name: blog 
+    #     path: ./quickstart/public/*
+
+    # - name: Publish 
+    #   run: |
+    #     pwd
+    #     ls -la 
+    #     echo "Sync Repo"
+    #     mkdir -p ./target
+    #     cd ./target
+    #     git clone https://github.com/chrisguest75/pages_example.git
+    #     cd pages_example
+    #     echo "Remove files"
+    #     rm -rf ./*   
+    #     pwd
+    #     ls -la .
+    #     ls -la ../../
+    #     echo "Copy files"
+    #     cp -R ../../quickstart/public/* . 
+    #     ls -la ./
+    #     git status
+    #     echo "Restore files"
+    #     git checkout HEAD -- README.md 
+    #     git checkout HEAD -- CNAME
+    #     ls -la ./        
+    #     git status
+    #     echo "Add files"
+    #     git add -A
+    #     echo "Commit files"
+    #     git config user.name "GitHub Actions Bot"
+    #     git config user.email "<>"        
+    #     git commit -m "From https://github.com/chrisguest75/hugo_examples ${{ github.sha }}"
+    #     git push origin main
+
+    # - name: Create build.json
+    #   run: | 
+    #     export COMMITID="${{ github.sha }}"
+    #     cat ./src/build.template | envsubst > ./src/build.json          
+

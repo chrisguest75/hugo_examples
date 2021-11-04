@@ -50,7 +50,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: ${{ steps.vars.outputs.sha_short }}
-        release_name: Release ${{ github.sha }}
+        release_name: Release ${{ steps.vars.outputs.sha_short }}
         draft: false
         prerelease: false
 
@@ -64,12 +64,6 @@ jobs:
         asset_path: ./quickstart/blog-package.zip
         asset_name: blog-package.zip
         asset_content_type: application/zip
-
-    # - name: Publish package 
-    #   uses: actions/upload-artifact@v2
-    #   with:
-    #     name: blog 
-    #     path: ./quickstart/public/*
 
     # - name: Publish 
     #   run: |

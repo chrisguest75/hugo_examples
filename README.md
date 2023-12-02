@@ -1,17 +1,22 @@
-# README.md
+# README
+
 Hugo examples with themes.  
 
 This repository contains a playground where I'm playing with a few hugo themes.  
 
-## TODO:
+REF: The output from here is copied to [github.com/chrisguest75/pages_example/README.md](https://github.com/chrisguest75/pages_example/blob/main/README.md)  
+
+TODO:  
+
 * Instructions for linux.
 * Build public folder and commit into a pages repo
-* submodules instructions 
+* submodules instructions
 * TIL - learned
 * food blog
 * Can I embed a 3d spinning globe onto my hugo about page?  
 
 ## Installation
+
 ```sh
 # extended version is installed by default on mac.
 brew install hugo
@@ -22,8 +27,11 @@ git clone --recurse-submodules git@github.com:chrisguest75/hugo_examples.git
 # init the submodules
 git submodule update --init --recursive
 ```
+
 ## Creating an example
-Following the [quickstart](https://gohugo.io/getting-started/quick-start/) using [themes](https://themes.gohugo.io/) from the list.   
+
+Following the [quickstart](https://gohugo.io/getting-started/quick-start/) using [themes](https://themes.gohugo.io/) from the list.  
+
 ```sh
 #  
 hugo new site quickstart
@@ -40,10 +48,12 @@ hugo server -D
 magick -density 128x128 -background none ./resources/me.png -resize 128x128 ./resources/favicon.ico
 ```
 
-## quickstart 
-Using the [hugo-theme-codex](https://themes.gohugo.io/themes/hugo-theme-codex/) theme. 
+## quickstart
+
+Using the [hugo-theme-codex](https://themes.gohugo.io/themes/hugo-theme-codex/) theme.  
 
 Demonstrates examples of using emojis and linking images into the posts.  
+
 ```ini
 enableEmoji = true
 ```
@@ -54,22 +64,12 @@ cd quickstart
 hugo -D
 ```
 
+## Resources
 
-## loveit 
-https://themes.gohugo.io/themes/loveit/
-
-
-# Resources
 * A walkthrough from [freecodecamp](https://www.freecodecamp.org/news/your-first-hugo-blog-a-practical-guide/)
-* awesome-hugo https://github.com/theNewDynamic/awesome-hugo
-
-
-
-
-https://github.community/t/how-does-one-commit-from-an-action/16127/2
-https://lannonbr.com/blog/2019-12-09-git-commit-in-actions
-https://devconnected.com/how-to-git-add-all-files/#:~:text=git%20%2D%2Dversion-,Add%20All%20Files%20using%20Git%20Add,%E2%80%9D%20option%20for%20%E2%80%9Call%E2%80%9D.&text=In%20this%20case%2C%20the%20new,to%20your%20Git%20staging%20area.
-
-https://github.com/actions/upload-release-asset
-
-https://stackoverflow.com/questions/59810838/how-to-get-the-short-sha-for-the-github-workflow
+* awesome-hugo repo [here](https://github.com/theNewDynamic/awesome-hugo)
+* loveit theme [here](https://hugoloveit.com/)  
+* How to add all files to git [here[(https://devconnected.com/how-to-git-add-all-files)  
+* Upload a release asset [here](https://github.com/actions/upload-release-asset)  
+* Using git commit in GitHub Actions [here](https://lannonbr.com/blog/2019-12-09-git-commit-in-actions)
+* How to get the short sha for the github workflow? [here](https://stackoverflow.com/questions/59810838/how-to-get-the-short-sha-for-the-github-workflow) 
